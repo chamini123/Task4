@@ -31,9 +31,9 @@ public class Main {
 	//Class<? extends Shape> means: An unknown class which extends Shape.
 	public static Shape createShape(Class<? extends Shape> clazz, Dimension dimension) {
 		try {
-			  Constructor <?> constructor = clazz.getDeclaredConstructor(Dimension.class);
+			  Constructor <? extends Shape> constructor = clazz.getDeclaredConstructor(Dimension.class);
 			  constructor.setAccessible(true);
-			  return (Shape)constructor.newInstance(dimension);
+			  return constructor.newInstance(dimension);
 		} catch (Exception e) {
 			throw new IllegalArgumentException("Invalid class or invalid Type", e);
 		}
