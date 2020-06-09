@@ -47,7 +47,7 @@ public class Main {
 		try {
 		         Method setter = clazz.getDeclaredMethod(setterName,clazz.getDeclaredField(fieldName).getType());
 			 setter.setAccessible(true);
-			 setter.invoke(shape,value);
+			 setter.invoke(shape,value); 
 			  
 			 Method getter = clazz.getDeclaredMethod(getterName);
 			 return  (String) getter.invoke(shape); 	 
